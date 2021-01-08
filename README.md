@@ -55,3 +55,25 @@ Para correr la app localmente
 • Como verificaión previa, desplegar el componente localmente:
     node server.js
 • Subir los cambios al repositorio de GitHub.
+
+# 12.
+• Crear nueva aplicación en Heroku (cajero-frontend) y conectar el repo de GitHub
+
+# 13.
+# En backend
+• Añadir URI del componente desplegado en Heroku,
+    -cajero-backend
+        main.py
+            origins = [
+                "...",
+                "...",
+                "https://stocpoolt-cajero-frontend.herokuapp.com"
+            ]
+# 14.
+# En frontend
+• Modificar las URIs, apuntar la dirección del componente lógico desplegado en Heroku:
+    -cajero-frontend
+        -src
+            -components
+                UserBalance.vue
+                    axios.get("https://stocpoolt-cajero-backend.herokuapp.com/user/balance/" + this.username)
