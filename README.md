@@ -1,7 +1,87 @@
 # @Stocpoolt
 
-# ------------------------------------
+# cajero-backend
 # cajero-frontend
+Contiene indicaciones de cómo se elaboró paso a paso.
+
+# ------------------------------------
+
+# 1.
+pip install fastapi
+pip install uvicorn
+pip install pydantic
+
+# 2.
+Crear y modificar:
+	-cajero-backend
+		__init__.py
+		main.py
+		-db
+			__init__.py
+			user_db.py
+			transaction_db.py
+		-models
+			__init__.py
+			user_models.py
+			transaction_models.py
+
+# 3.
+Probar las funcionalidades del main.py en Postman
+• Para probar el api en Postman
+• (En backend)
+		uvicorn main:api --reload
+
+o en Documentación generada por FastAPI
+	http://127.0.0.1:8000/docs#/
+	http://127.0.0.1:8000/redoc/
+
+# 4.
+Crear y modificar:
+	-cajero-backend
+		Procfile
+		requirements.txt
+
+Actualizar repositorio GitHub
+Desplegar en Heroku
+Probar en Postman con la URL de Heroku
+• Para probar el api en Postman
+• (En backend)
+	uvicorn main:api --reload
+
+# ------------------------------------
+
+# 5.
+Instalación de Node.js y NPM
+
+	• Windows	: descargar desde https://nodejs.org/en/ el ejecutable y correrlo, seguir wizard.
+	• Linux		: seguir la siguiente guía: https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/
+
+	node --version
+	npm --version
+
+# Creación de proyecto en Vue
+Instalación de CLI:
+• Para poder crear proyectos en Vue
+	npm install –g @vue/cli
+	vue --version
+
+• Creación del proyecto
+• (En la raiz del proyecto)
+	vue init webpack cajero-frontend
+
+		Project Name: carejo-frontend
+		Project Descripción: una breve descripción
+		Author: stocpoolt
+		Vue Build: Runtime + Compiler
+		Install vue-router? (Y/n): n
+		Use ESLint to lint your code? (Y/n): n
+		Set up unit test (Y/n): n
+		Setup e2e tests with Nightwatch? (Y/n): n
+		Should we run…: Yes, use NPM
+
+• Entrar al nuevo folder (cajero-frontend) y ejecutar:
+	npm run start
+• Dirigirse a la URI http://localhost:808X (Cambiar la "X" por el digito del puerto indicado)
 
 # 6.
 -cajero-frontend
@@ -33,7 +113,7 @@
 Para correr la app localmente
 # --- AL MISMO TIEMPO ---
     • En la raíz del proyecto de FastAPI (backend):
-        uvicorn main;api --reload
+        uvicorn main:api --reload
     • En la raíz del proyecto de Vue (frontend):
         npm run start
 # -----------------------
@@ -77,3 +157,70 @@ Para correr la app localmente
             -components
                 UserBalance.vue
                     axios.get("https://stocpoolt-cajero-backend.herokuapp.com/user/balance/" + this.username)
+
+# 15.
+• Actualizar repositorios
+• Actualizar los componentes desplegados en Heroku
+• Abrir la app desde Heroku
+
+# 16.
+# --------------------------------
+
+# Postgres
+Es un gestor de base de datos relacionales «opensource», que ha sido usado por mas de 20 años en aplicaciones web, móviles y de análisis.
+
+1. 
+# Instalación de PostgreSQL
+
+#   Windows:
+        https://www.postgresqltutorial.com/install-postgresql/
+#   MacOS:
+        https://www.postgresqltutorial.com/install-postgresqlmacos/
+        (omitir sección Load the Sample Database)
+#   Linux:
+        https://www.postgresqltutorial.com/install-postgresql-linux/
+        (omitir sección Load the Sample Database)
+
+En el proceso de instalación es importante tener en cuenta:
+    • La contraseña ingresada.
+    • El puerto asignado.
+
+En Linux, a los datos de contraseña y puerto se le asignan valores por defecto:
+Para modificar la contraseña se usan los siguientes comandos:
+    you_user:$ sudo –u postgres psql postgres
+    postgres=# \password postgres
+
+El puerto por defecto es el 5432
+
+2. 
+# pgAdmin
+En Linux se debe instalar por aparte:
+    https://www.pgadmin.org/download/pgadmin-4-apt/
+
+3. 
+# Crear Base de Datos
+    MISION-TIC
+        Squema: cajerodb (Vacio)
+        Squema: Ciclo-lll
+            Table: usuario
+
+4. Para ejecutar una query en pgAdmin hacer clic derecho sobre la tabla y seleccionar la herramienta Query Tool y ejecutar el código párrafo a la vez:
+    
+    4. 1. Insertar un usuario
+        INSERT INTO "Ciclo-lll"."Usuario"(id, username, balance)
+        VALUES (1, 'Jeisson2020', 9018100);
+
+    4. 2. Modificar el saldo
+        UPDATE "Ciclo-lll"."Usuario"
+        SET username='Jeisson2021', balance=12050000
+        WHERE id=1;
+
+    4. 3. Consultar usuarios
+        SELECT id, username, balance
+        FROM "Ciclo-lll"."Usuario";
+
+    4. 4. Eliminar usuario
+        DELETE FROM "Ciclo-lll"."Usuario"
+        WHERE id=1;
+
+# --------------------------------
