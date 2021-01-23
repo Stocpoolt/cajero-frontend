@@ -1,18 +1,16 @@
 {
-  "name": "cajero-frontend",
+  "name": "cajero_app",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Stocpoolt <stocpoolt@gmail.com>",
+  "author": "Camilo <andrescamilo468@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "node server.js",
+    "start": "npm run dev",
     "build": "node build/build.js"
   },
   "dependencies": {
     "axios": "^0.21.0",
-    "expres": "0.0.5",
-    "express": "^4.17.1",
     "vue": "^2.5.2",
     "vue-router": "^3.4.9"
   },

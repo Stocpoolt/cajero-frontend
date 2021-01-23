@@ -10,6 +10,13 @@ Contiene indicaciones de cómo se elaboró paso a paso.
 pip install fastapi
 pip install uvicorn
 pip install pydantic
+pip install fastapi
+pip install uvicorn
+pip install SQLAlchemy
+pip install pydantic
+pip install psycopg2
+
+Instalar cualquier otro paquete en caso de ser requerido.
 
 # 2.
 Crear y modificar:
@@ -224,3 +231,110 @@ En Linux se debe instalar por aparte:
         WHERE id=1;
 
 # --------------------------------
+••• Diapo 16 •••
+
+# Postgres, instalación e integración
+Seguir alguna de las siguientes guías de acuerdo a tu sistema
+operativo:
+
+Windows: https://www.postgresqltutorial.com/install-postgresql/
+MacOS:   https://www.postgresqltutorial.com/install-postgresqlmacos/
+		 (omitir sección Load the Sample Database)
+Linux:   https://www.postgresqltutorial.com/install-postgresql-linux/
+		 (omitir sección Load the Sample Database)
+
+# pgAdmin
+En Windows y MacOS se instala por defecto, en Linux se debe instalar por aparte:
+	https://www.pgadmin.org/download/pgadmin-4-apt/
+
+• Crear base de datos: MISION-TIC
+• Crear tabla: Usuario
+• Crear esquema: Ciclo-lll; cajerodb
+
+# 17.
+• En db_conection.py, definir:
+	-cajero-backend
+		-db
+			db_conection.py
+• Datos de la base de datos Postgres:
+	SQLALCHEMY_DATABASE_URL =  "postgresql://postgres:xxx Password xxx@localhost:5432/MISION-TIC"			
+
+• En transaction_db.py, definir:
+	-cajero-backend
+		-db
+			transaction_db.py
+
+# 18.
+••• Diapo 18 •••
+
+• En user_models.py, definir:
+	-cajero-backend
+		-models
+			user_models.py
+
+• En transaction_models.py, definir:
+	-cajero-backend
+		-models
+			transaction_models.py
+
+# 19.
+• En user_router.py, definir:
+	-cajero-backend
+		-router
+			user_router.py
+
+• En transaction_router.py, definir:
+	-cajero-backend
+		-router
+			transaction_router.py
+
+# 20.
+• En main.py, definir:
+	-cajero-backend
+		main.py
+
+# -------------------------------
+
+# 21. En Query Tool de Postgres
+1. Crear usuarios
+	INSERT INTO cajerodb.users(username, password, balance)
+	VALUES ('camilo24', 'root', 12000);
+
+2. Consultar información de usuario
+	SELECT username, password, balance
+	FROM cajerodb.users
+	WHERE username='camilo24';
+
+3. Consultar transacciones
+	SELECT id, username, date, value, actual_balance
+	FROM cajerodb.transactions;
+
+# 22. En frontend
+• Crear y definir UserAuth.vue; UserTransaction.vue:
+	-cajero-frontend
+		-src
+			-components
+				UserAuth.vue
+				UserTransaction.vue
+
+• Modificar routers.js:
+	-cajero-frontend
+		-src
+			routers.js
+
+• Modificar App.vue:
+	-cajero-frontend
+		-src
+			App.vue
+
+# ----------------------------------------
+
+# 23.
+Luego de aplicar todos los cambios pertinentes correr:
+# --- AL MISMO TIEMPO ---
+    • En la raíz del proyecto de FastAPI (backend):
+        uvicorn main:api --reload
+    • En la raíz del proyecto de Vue (frontend):
+        npm run start
+        
+# ----------------------------------------

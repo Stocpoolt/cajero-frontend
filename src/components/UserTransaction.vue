@@ -1,21 +1,18 @@
 <template>
     <div id="UserTransaction">
         <div class="continer_user_transaction">
-            <h2> Transacción {{username}}</h2>
-
+            <h2> Transacción de {{username}}</h2>
             <form v-on:submit.prevent="processTransaction" >
-                <input type="tetx" v-model="value" placeholder="Valor">
+                <input type="tetx" v-model="value" placeholder="Value">
                 <br>
-                <button type="submit">Hacer Transacción</button>
+                <button type="submit">Realizar transacción</button>
             </form>
-
         </div>
     </div>
 </template>
 
 
 <script>
-
 import axios from 'axios';
 export default {
     name: "UserTransaction",
@@ -62,30 +59,28 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
-
+    /* Marco */
     .continer_user_transaction {
-        border: 3px solid  #283747;
+        /* Redondes y color */
+        border: 3px solid  #700505;
         border-radius: 10px;
-
-        width: 25%;
-        height: 60%;
+        /* Ancho y alto */
+        width: 35%;
+        height: 62%;
         
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
+    /* Frase "Transacción --- */
     #UserTransaction h2{
-        color: #283747;
-
+        color: #9e0d0d;
     }
 
     #UserTransaction form{
-        width: 50%;
-        
+        width: 60%;
     }
 
     #UserTransaction input{
@@ -97,15 +92,14 @@ export default {
         margin: 5px 0;
 
         border: 1px solid #283747;
-        
     }
-
+    /* Botón */
     #UserTransaction button{
         width: 100%;
         height: 40px;
-
+        /* Color relleno */
         color: #E5E7E9;
-        background: #283747;
+        background: #9e0d0d;
         border: 1px solid #E5E7E9;
 
         border-radius: 5px;
@@ -115,7 +109,7 @@ export default {
 
     #UserTransaction button:hover{
         color: #E5E7E9;
-        background: crimson;
+        background: #da1515;
         border: 1px solid #283747;
     }
 </style>

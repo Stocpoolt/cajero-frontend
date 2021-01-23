@@ -1,7 +1,11 @@
 <template>
-    <div id="UserBalance">
-        <h2>{{username}}</h2>
-        <h2>Tu saldo es: <span> {{balance}} COP </span> </h2>
+    <div id="UserBalance" class="user_balance">
+        <h2>
+            {{username}}, NU Bank te informa:
+        </h2>
+        <h2>
+            Tu saldo disponible es: <span>  ${{balance}} COP </span>
+        </h2>
     </div>
 </template>
 
@@ -11,40 +15,41 @@ export default {
     name: 'UserBalance',
     data: function (){
         return {
-            username: "",
+            username: "none",
             balance: 0
         }
     },
+
     created: function(){
         this.username = this.$route.params.username
         let self = this
-        
-        axios.get("https://stocpoolt-cajero-backend.herokuapp.com/user/balance/" + this.username)
-        .then((result) => {
+ 
+        axios.get("http://127.0.0.1:8000/user/balance/" + this.username).then((result) => {
             self.balance = result.data.balance
         })
-        .catch((error) => {
-            alert("ERROR Servidor");
-        });
     }
 }
 </script>
+
 
 <style>
     #UserBalance{
         width: 100%;
         height: 100%;
+
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: center;    
         align-items: center;
     }
+
     #UserBalance h2{
         font-size: 50px;
-        color: #283747;
+        color: #052908;
     }
+
     #UserBalance span{
-        color: crimson;
+        color: #345d8b;
         font-weight: bold;
     }
 </style>
