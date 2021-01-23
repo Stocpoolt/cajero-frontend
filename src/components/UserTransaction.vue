@@ -1,9 +1,9 @@
 <template>
     <div id="UserTransaction">
         <div class="continer_user_transaction">
-            <h2> Transacción de {{username}}</h2>
+            <h1> Transacción de {{username}}</h1>
             <form v-on:submit.prevent="processTransaction" >
-                <input type="tetx" v-model="value" placeholder="Value">
+                <input type="tetx" v-model="value" placeholder="Inserte aquí el valor de la transacción">
                 <br>
                 <button type="submit">Realizar transacción</button>
             </form>
@@ -55,7 +55,7 @@ export default {
         padding: 0%;
         height: 100%;
         width: 100%;
-    
+        margin: 0px auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -67,17 +67,17 @@ export default {
         border-radius: 10px;
         /* Ancho y alto */
         width: 35%;
-        height: 62%;
-        
+        height: 52%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
     }
     /* Frase "Transacción --- */
-    #UserTransaction h2{
+    #UserTransaction h1{
         color: #e0d7d7;
-        
+        margin: 32px auto;
     }
 
     #UserTransaction form{
@@ -87,30 +87,27 @@ export default {
     #UserTransaction input{
         height: 40px;
         width: 100%;
-
         box-sizing: border-box;
-        padding: 10px 20px;
-        margin: 5px 0;
-
+        padding: 10px 30px;
+        margin: 10px 0;
         border: 1px solid #283747;
     }
     /* Botón */
     #UserTransaction button{
         width: 100%;
-        height: 40px;
+        height: 50px;
         /* Color relleno */
         color: #E5E7E9;
         background: #9e0d0d;
         border: 1px solid #E5E7E9;
-
         border-radius: 5px;
         padding: 10px 25px;
-        margin: 5px 0;
+        margin: 10px 0;
     }
 
     #UserTransaction button:hover{
         color: #E5E7E9;
-        background: #da1515;
+        background: #460505;
         border: 1px solid #283747;
     }
 </style>

@@ -7,8 +7,7 @@ import vueRouter from 'vue-router'
 import router from './router'
 Vue.use(vueRouter)
 
-
-
+require('./plugins/fontawesome');
 
 Vue.config.productionTip = false
 

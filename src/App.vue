@@ -4,21 +4,22 @@
       <div class="header">
         <h1>National University Bank</h1>
         <nav>
-          <button v-on:click="init" v-if="is_auth" > Home </button>
-          <button v-on:click="getBalance" v-if="is_auth" > Saldo </button>
-          <button v-on:click="doTransaction" v-if="is_auth" > Transacción </button>
-          <button v-on:click="logOut" v-if="is_auth" >Cerrar sesión</button>
+          <button v-on:click="init" v-if="is_auth" ><font-awesome-icon icon="home"/> Home</button>
+          <button v-on:click="getBalance" v-if="is_auth" ><font-awesome-icon icon="money-bill" class="mr-2"/> Saldo </button>
+          <button v-on:click="doTransaction" v-if="is_auth" ><font-awesome-icon icon="credit-card" class="mr-2"/> Transacción </button>
+          <button v-on:click="logOut" v-if="is_auth" ><font-awesome-icon icon="door-open"/> Cerrar sesión</button>
         </nav>
       </div>
       <div class="main-component">
         <router-view  v-on:log-in="logIn" ></router-view>
       </div>
       <div class="footer">
-        <h2>&copy; National University Bank 2021</h2>
+        <h2>
+          &copy; National University Bank 2021
+        </h2>
       </div>
     </div>
   </div>
-
 </template>
 
 
@@ -127,9 +128,18 @@ export default {
   }
   .header nav button{
     /* Color letra de botón; del botón; del borde */
-    color: #E5E7E9;
-    background: #9e0d0d;
-    border: 1px solid #E5E7E9;
+    color: #fff;
+    display: inline-block;
+    border: 5px solid transparent;
+    line-height: 1.5;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+    font-weight: 1000;
+    border-radius: 2em;
+    padding: .375rem .75rem;
+    background-color: #ad1010;
+    border-color: #a03737;
+    width: 180px;
     
     /* Redondes del borde del botón; ancho y alto */
     border-radius: 5px;

@@ -37,13 +37,14 @@
     }
     /* Color letra oración "Hello, Welcome ..." */
     #User h2{
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: Arimo;
         font-size: 50px;
-        color: #7cb5db;
+        color: #ffffff;
+        margin: 50px;
     }
     /* Color letra nombre usuario */
     #User span{
-        color: #ffffff;
+        color: #36b4ee;
         font-weight: bold;
         font-family: 'Raleway';
     }
