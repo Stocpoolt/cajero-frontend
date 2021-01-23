@@ -18,7 +18,6 @@
                 username: "none"
             }
         },
-
         created: function(){
             this.username = this.$route.params.username
         }
