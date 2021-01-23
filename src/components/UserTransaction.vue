@@ -30,7 +30,7 @@ export default {
                 username: this.username,
                 value: this.value
             }
-            axios.put("https://stocpoolt-cajero-frontend.herokuapp.com/user/transaction/", transaction_in,  {headers: {}})
+            axios.put("https://stocpoolt-cajero-backend.herokuapp.com/user/transaction/", transaction_in,  {headers: {}})
                 .then((result) => {
                     alert("Transaction Correcta, Saldo Restante: " + result.data.actual_balance);
                     
