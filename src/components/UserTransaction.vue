@@ -63,7 +63,7 @@ export default {
     /* Marco */
     .continer_user_transaction {
         /* Redondes y color */
-        border: 3px solid  #700505;
+        border: 3px solid  #ffffff;
         border-radius: 10px;
         /* Ancho y alto */
         width: 35%;
@@ -76,7 +76,8 @@ export default {
     }
     /* Frase "Transacción --- */
     #UserTransaction h2{
-        color: #9e0d0d;
+        color: #e0d7d7;
+        
     }
 
     #UserTransaction form{

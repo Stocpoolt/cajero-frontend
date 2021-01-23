@@ -30,19 +30,29 @@
     #User{
         width: 100%;
         height: 100%;
-
+        font-family: Arimo;
         display: flex;
-        justify-content: center;    
+        justify-content: center;
         align-items: center;
     }
     /* Color letra oración "Hello, Welcome ..." */
     #User h2{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 50px;
-        color: #052908;
+        color: #7cb5db;
     }
     /* Color letra nombre usuario */
     #User span{
-        color: #345d8b;
+        color: #ffffff;
         font-weight: bold;
+        font-family: 'Raleway';
+    }
+
+    .badye {
+        font-family: 'Lora';
+        background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65));
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
     }
 </style>

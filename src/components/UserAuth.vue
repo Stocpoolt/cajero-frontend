@@ -1,7 +1,7 @@
 <template>
     <div id="AuthUser" class="auth_user">
         <div class="container_auth_user">
-            <h2>Autenticarse</h2>
+            <h1>Autenticarse</h1>
             <form v-on:submit.prevent="processAuthUser" >
                 <input type="text" v-model="user_in.username" placeholder="Insert your username">
                 <br>
@@ -61,7 +61,7 @@ export default {
     /* Recuadro */
     .container_auth_user {
         /* Color contorno */
-        border: 3px solid  #700505;
+        border: 3px solid  #ffffff;
 
         /* Redondes esquinas */
         border-radius: 12px;
@@ -78,8 +78,8 @@ export default {
         align-items: center;
     }
     /* Palabra "Autenticarse" */
-    .auth_user h2{
-        color: #9e0d0d;
+    .auth_user h1{
+        color: #ececec;
     }
 /* Boxtext de user y password */    
     /* Ancho */

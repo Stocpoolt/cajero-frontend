@@ -1,11 +1,11 @@
 <template>
     <div id="UserBalance" class="user_balance">
+        <div class="continer_user_transaction">
         <h2>
-            {{username}}, NU Bank te informa:
-        </h2>
-        <h2>
+            {{username}}, NU Bank te informa: <br>
             Tu saldo disponible es: <span>  ${{balance}} COP </span>
         </h2>
+        </div>
     </div>
 </template>
 
@@ -36,7 +36,7 @@ export default {
     #UserBalance{
         width: 100%;
         height: 100%;
-
+        text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;    
@@ -45,11 +45,25 @@ export default {
 
     #UserBalance h2{
         font-size: 50px;
-        color: #052908;
+        color: #e9ffeb;
+        margin: 0px auto;
     }
 
     #UserBalance span{
-        color: #345d8b;
+        color: #8bb7eb;
         font-weight: bold;
+    }
+    .continer_user_transaction {
+        /* Redondes y color */
+        border: 3px solid  #ffffff;
+        border-radius: 10px;
+        /* Ancho y alto */
+        width: 70%;
+        height: 62%;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 </style>

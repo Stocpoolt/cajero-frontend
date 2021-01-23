@@ -1,21 +1,24 @@
 <template>
-  <div id="app" class="app">
-    <div class="header">
-      <h1>National University Bank</h1>
-      <nav>
-        <button v-on:click="init" v-if="is_auth" > Home </button>
-        <button v-on:click="getBalance" v-if="is_auth" > Saldo </button>
-        <button v-on:click="doTransaction" v-if="is_auth" > Transacción </button>
-        <button v-on:click="logOut" v-if="is_auth" >Cerrar sesión</button>
-      </nav>
-    </div>
-    <div class="main-component">
-      <router-view  v-on:log-in="logIn" ></router-view>
-    </div>
-    <div class="footer">
-      <h2>National University Bank 2021</h2>
+  <div class="fondo">
+    <div id="app" class="app">
+      <div class="header">
+        <h1>National University Bank</h1>
+        <nav>
+          <button v-on:click="init" v-if="is_auth" > Home </button>
+          <button v-on:click="getBalance" v-if="is_auth" > Saldo </button>
+          <button v-on:click="doTransaction" v-if="is_auth" > Transacción </button>
+          <button v-on:click="logOut" v-if="is_auth" >Cerrar sesión</button>
+        </nav>
+      </div>
+      <div class="main-component">
+        <router-view  v-on:log-in="logIn" ></router-view>
+      </div>
+      <div class="footer">
+        <h2>&copy; National University Bank 2021</h2>
+      </div>
     </div>
   </div>
+
 </template>
 
 
@@ -90,9 +93,9 @@ export default {
 
 
 <style>
-  body{
-    margin: 0 0 0 0;
-  }
+  body {
+    margin: 0%;
+}
 /* Encabezado */
   .header{
     margin: 0%;
@@ -141,7 +144,6 @@ export default {
     height: 75vh;
     margin: 0%;
     padding: 0%;
-    background: #FDFEFE ;
   }
   .footer{
     margin: 0;
@@ -159,5 +161,13 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .fondo{
+    background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('../src/assets/principal.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 </style>
