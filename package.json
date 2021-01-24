@@ -1,12 +1,12 @@
 {
-  "name": "cajero_app",
+  "name": "cajero-frontend",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Stocpoolt <stocpoolt@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "start": "node server.js",
     "build": "node build/build.js"
   },
   "dependencies": {
@@ -14,6 +14,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "axios": "^0.21.0",
+    "express": "^4.17.1",
+    "server-static": "^2.0.5",
     "vue": "^2.5.2",
     "vue-router": "^3.4.9"
   },
