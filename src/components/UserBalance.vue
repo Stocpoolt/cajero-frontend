@@ -3,8 +3,8 @@
         <div class="continer_user_transaction">
             <div class="fondoUser">
                 <h1><br>
-                    {{username}}, NU Bank te informa: <br>
-                    Tu saldo disponible es: <span>  ${{balance}} COP </span>
+                    {{username}}, NU Bank informs you: <br>
+                    Your available balance is: <span>  ${{balance}} COP </span>
                 </h1>
             </div>
         </div>
@@ -26,7 +26,7 @@ export default {
         this.username = this.$route.params.username
         let self = this
  
-        axios.get("https://stocpoolt-cajero-backend.herokuapp.com/user/balance/" + this.username).then((result) => {
+        axios.get("http://localhost:8000/user/balance/" + this.username).then((result) => {
             self.balance = result.data.balance
         })
     }
@@ -66,7 +66,7 @@ export default {
         align-items: center;
     }
     .fondoUser{
-        background-image: linear-gradient(rgba(15, 20, 47, 0.65), rgba(15, 23, 47, 0.65)), url('../assets/principal.jpg');
+        background-image: linear-gradient(rgba(99, 10, 10, 0.65), rgba(15, 23, 47, 0.65)), url('../assets/principal.jpg');
         width: 100%;
         height: 100vh;
         background-size: cover;
