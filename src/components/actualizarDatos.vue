@@ -9,7 +9,6 @@
               <input type="text" v-model="email" class="form-control"  aria-describedby="emailHelp" placeholder="email@example.com">
               <label >Numero de documento: </label>
               <input type="text" v-model="numero_documento" class="form-control" id="numero_identificacion" aria-describedby="emailHelp" placeholder="Identificacion">
-          
             </div>
           </fieldset>
           <br>
@@ -17,10 +16,8 @@
             <legend>Datos del usuario a actualizar</legend>
             <label for="fname">Nombre</label>
             <input type="text" v-model="nombre" placeholder="Your name..">
-
             <label for="lname">Apellido</label>
             <input type="text" v-model="apellido" placeholder="Your last name..">
-            
             <label >Telefono: </label>
             <input type="text" v-model="numero_celular" class="form-control"  aria-describedby="emailHelp" placeholder="Telefono">
             <label>Tipo de documento: </label>
@@ -30,14 +27,12 @@
                 <option>Pasaporte</option>
             </select>
             </fieldset>
-
-
         </form>
         <br>
         <button v-on:click.prevent="actualizarDatos" class="button button2">Actualizar datos</button>
-
     </div>
 </template>
+
 
 <script>
 import axios from 'axios';
@@ -56,8 +51,8 @@ export default{
   methods:{
     actualizarDatos: function(){
       let self = this
-      axios.put("https://hotel-app-g5.herokuapp.com/actualizar/datos_usuario/",
-                "http://localhost:8080/actualizar/datos_usuario/",
+      axios.put("https://stocpoolt-hotel-frontend.herokuapp.com/actualizar/datos_usuario/",
+                "http://localhost:8081/actualizar/datos_usuario/",
       {
         nombre: this.nombre,
         apellido: this.apellido,
@@ -73,6 +68,7 @@ export default{
   }
 }
 </script>
+
 
 <style scoped>
 .actualizarDatos{
@@ -102,7 +98,6 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
-
 input[type=submit] {
   background-color: #4CAF50;
   color: white;
@@ -111,7 +106,6 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
-
 input[type=submit]:hover {
   background-color: #45a049;
 }

@@ -1,4 +1,5 @@
 <template>
+  <div class="fondo">
   <div id="app">
     <div>
       <ul class="navbar">
@@ -17,14 +18,18 @@
     </div>
     <router-view/>
   </div>
+  </div>
 </template>
+
+
 <script>
 export default {
   name: 'App'
 }
 </script>
-<style>
 
+
+<style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,11 +48,9 @@ export default {
   top: 0;
   width: 100%;
 }
-
 .nav {
   float: left;
 }
-
 .nav a, .dropbtn {
   display: inline-block;
   color: black;
@@ -55,15 +58,12 @@ export default {
   padding: 14px 16px;
   text-decoration: none;
 }
-
 .nav a:hover, .dropdown:hover .dropbtn {
   background-color: #4CAF50;
 }
-
 li.dropdown {
   display: inline-block;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -72,7 +72,6 @@ li.dropdown {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -80,12 +79,18 @@ li.dropdown {
   display: block;
   text-align: left;
 }
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-
+.fondo{
+    background-image: linear-gradient(rgba(116, 162, 230, 0.671), rgba(165, 71, 28, 0.774)), url('../src/assets/principal.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
 </style>

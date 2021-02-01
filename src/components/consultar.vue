@@ -1,7 +1,6 @@
 <template>
     <div id="consultar">
         <img class="loguito" src="../assets/hotel-spiaga.png">
-
         <br>
         <h2>Consultar reserva</h2>
         <ul>
@@ -18,9 +17,7 @@
                             <input type="text" v-model="numero_documento" id="num_identificacion">
                         </li>
                     </ul>
-
                 </div>
-                
             </fieldset>
             <br>
             <fieldset class="form-group">
@@ -33,14 +30,11 @@
                     <li><b>numero de adultos:</b> {{num_adults}}</li>
                     <li><b>Tipo de acomodacion:</b> {{tipo_acomodacion}}</li>
                 </ul>   
-
             </fieldset>
         </ul>
-
         <button class="button button2" v-on:click.prevent="search">Consultar</button>
         <br>
         <br>
-
         <ul>
             <li>
                 <a class="dos" href="http://www.facebook.com/" target="_blank">
@@ -60,6 +54,7 @@
         </ul>
     </div>
 </template>
+
 
 <script>
 import axios from 'axios';
@@ -81,9 +76,11 @@ import axios from 'axios';
         methods:{
             search: function(){
                 let self = this
-                axios.post("https://hotel-app-g5.herokuapp.com/consultar/", {
-                    'email':this.email,
-                    'numero_documento':this.numero_documento    
+                axios.post("https://stocpoolt-hotel-frontend.herokuapp.com/consultar/",
+                           "http://localhost:8081/consultar/",
+                           {
+                            'email':this.email,
+                            'numero_documento':this.numero_documento    
                 }).then(response => {
                     this.nombre = response.data.nombre
                     this.apellido = response.data.apellido
@@ -99,60 +96,57 @@ import axios from 'axios';
         created: function(){
         }
     }
-
 </script>
+
+
 <style scoped>
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-}
-.button2:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 40px;
-}
-.dos {
-  color: #42b983;
-}
-label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-}
-
-input,button,
-label {
-    margin: .4rem 0;
-}
-fieldset{
-    width: 25%;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-.loguito{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
- 
+    .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    }
+    .button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    h1, h2 {
+    font-weight: normal;
+    }
+    ul {
+    list-style-type: none;
+    padding: 0;
+    }
+    li {
+    display: inline-block;
+    margin: 0 40px;
+    }
+    .dos {
+    color: #42b983;
+    }
+    label {
+        display: block;
+        font: 1rem 'Fira Sans', sans-serif;
+    }
+    input,button,
+    label {
+        margin: .4rem 0;
+    }
+    fieldset{
+        width: 25%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .loguito{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>

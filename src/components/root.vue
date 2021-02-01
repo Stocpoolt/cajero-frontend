@@ -22,31 +22,29 @@
                 </li>
             </ul>
         </div>
-
     </div>
-    
 </template>
 
+
 <script>
-export default {
-    
-}
+export default {}
 </script>
 
+
 <style scoped>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box; }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 40px;
-}
-.loguito{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
+    body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box; }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        display: inline-block;
+        margin: 0 40px;
+    }
+    .loguito{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>
